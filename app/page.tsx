@@ -1,102 +1,207 @@
-import Image from "next/image";
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="bg-[#f7f3e9] font-inter">
+      {/* Navigation Bar */}
+      <nav className="bg-[#4a2c2a] text-white p-4">
+        <div className="max-w-screen-xl mx-auto flex justify-between items-center">
+          <a href="#" className="text-2xl font-bold">Amazing Coffee</a>
+          <div className="hidden md:flex space-x-6 font-semibold">
+            <a href="#about" className="hover:text-[#967d68] transition-colors">About</a>
+            <a href="#products" className="hover:text-[#967d68] transition-colors">Products</a>
+            <a href="#blog" className="hover:text-[#967d68] transition-colors">Blog</a>
+            <a href="#contact" className="hover:text-[#967d68] transition-colors">Contact</a>
+          </div>
+        </div>
+      </nav>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      {/* Hero Section */}
+      <header className="relative text-center text-white p-6 sm:p-12 bg-[#4a2c2a]">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+          Elevate Your Coffee Experience
+        </h1>
+        <p className="text-xl md:text-2xl mb-8">
+          Discover the finest specialty coffee from around the world.
+        </p>
+        <a
+          href="#products"
+          className="bg-white text-[#4a2c2a] font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-200 transition"
+        >
+          Explore Now
+        </a>
+      </header>
+
+      {/* About Us Section */}
+      <section id="about" className="py-16 px-4">
+        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-8">
+          <div className="md:w-1/2">
+            <h2 className="text-3xl font-bold mb-4 text-[#4a2c2a]">Our Story</h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              At Amazing Specialty Coffee, we believe every bean tells a story.
+              From meticulously selecting the finest Arabica beans grown in
+              Vietnam&apos;s highlands to the precise roasting process, every
+              step is a labor of love.
+            </p>
+          </div>
+          <div className="md:w-1/2">
+            <img
+              src="https://placehold.co/600x400/967d68/FFFFFF?text=About+Us"
+              alt="About Us"
+              className="rounded-xl shadow-md w-full"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <main id="products" className="max-w-screen-xl mx-auto py-12 px-4">
+        <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">Our Products</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Product 1 */}
+          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+            <img
+              src="https://placehold.co/600x400/967d68/FFFFFF?text=Coffee+Beans"
+              alt="Coffee Beans"
+              className="w-full h-[250px] object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-bold mb-2 text-gray-900">Premium Whole Beans</h3>
+              <p className="text-gray-600">
+                Carefully selected beans sourced from the best farms around the globe.
+              </p>
+            </div>
+          </div>
+          {/* Product 2 */}
+          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+            <img
+              src="https://placehold.co/600x400/4a2c2a/FFFFFF?text=Ground+Coffee"
+              alt="Ground Coffee"
+              className="w-full h-[250px] object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-bold mb-2 text-gray-900">Freshly Ground Coffee</h3>
+              <p className="text-gray-600">
+                Enjoy the rich flavor instantly with our perfectly ground coffee.
+              </p>
+            </div>
+          </div>
+          {/* Product 3 */}
+          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+            <img
+              src="https://placehold.co/600x400/7a5b4c/FFFFFF?text=Coffee+Accessories"
+              alt="Coffee Accessories"
+              className="w-full h-[250px] object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-bold mb-2 text-gray-900">Coffee Accessories</h3>
+              <p className="text-gray-600">
+                Everything you need to brew the perfect cup at home.
+              </p>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Blog Section */}
+      <section id="blog" className="py-16 px-4 bg-gray-100">
+        <div className="max-w-screen-xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">News & Blog</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Blog Post 1 */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <img
+                src="https://placehold.co/600x400/f0e3d2/4a2c2a?text=Roasting+Coffee"
+                alt="Roasting Coffee"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h4 className="text-xl font-semibold mb-2 text-gray-900">
+                  The Art of Roasting Specialty Coffee
+                </h4>
+                <p className="text-sm text-gray-600">
+                  Discover the secrets to achieving the purest flavor profiles.
+                </p>
+              </div>
+            </div>
+            {/* Blog Post 2 */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <img
+                src="https://placehold.co/600x400/d9c0a9/4a2c2a?text=Health+Benefits"
+                alt="Health Benefits"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h4 className="text-xl font-semibold mb-2 text-gray-900">
+                  Unexpected Health Benefits of Coffee
+                </h4>
+                <p className="text-sm text-gray-600">
+                  It&apos;s not just delicious—coffee also offers great health perks.
+                </p>
+              </div>
+            </div>
+            {/* Blog Post 3 */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <img
+                src="https://placehold.co/600x400/b8a69a/4a2c2a?text=Brewing+Guide"
+                alt="Brewing Guide"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h4 className="text-xl font-semibold mb-2 text-gray-900">
+                  A Simple Guide to Brewing the Perfect Cup
+                </h4>
+                <p className="text-sm text-gray-600">
+                  Step-by-step instructions for a perfect brew at home.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-16 px-4">
+        <div className="max-w-screen-xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8 text-[#4a2c2a]">Contact Us</h2>
+          <form className="bg-white rounded-2xl shadow-lg p-8 max-w-lg mx-auto">
+            <div className="mb-6">
+              <input
+                type="text"
+                placeholder="Your Name"
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#967d68]"
+              />
+            </div>
+            <div className="mb-6">
+              <input
+                type="email"
+                placeholder="Your Email"
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#967d68]"
+              />
+            </div>
+            <div className="mb-6">
+              <textarea
+                rows={4}
+                placeholder="Your Message"
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#967d68]"
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-[#4a2c2a] text-white px-6 py-3 rounded-lg shadow hover:bg-[#3b2321] transition"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#4a2c2a] text-white p-8 text-center">
+        <div className="max-w-screen-xl mx-auto px-4">
+          <p className="text-lg">&copy; 2024 Amazing Specialty Coffee. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
