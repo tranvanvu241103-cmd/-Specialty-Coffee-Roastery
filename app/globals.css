@@ -1,217 +1,87 @@
-/* Reset và cấu hình cơ bản */
-body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    background-color: #f7f3e9;
-    color: #333;
-    margin: 0;
-    padding: 0;
+/* ====== Reset & Base ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Kiểu cho thanh điều hướng */
-.navbar {
-    background-color: #4a2c2a;
-    color: white;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-}
-.navbar-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-.navbar-links a:hover {
-    color: #967d68;
-}
-
-/* Kiểu cho menu di động */
-.mobile-menu {
-    background-color: #4a2c2a;
-    padding: 1rem;
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    z-index: 40;
-    transition: transform 0.3s ease-in-out;
-    transform: translateY(-100%);
-}
-.mobile-menu.active {
-    transform: translateY(0);
-}
-.mobile-menu a {
-    color: white;
-    display: block;
-    padding: 0.75rem 1rem;
-    text-decoration: none;
-    border-bottom: 1px solid #5d423f;
-}
-.mobile-menu a:hover {
-    background-color: #3b2321;
-}
-
-/* Kiểu cho phần Hero */
-.header {
-    background-image: url('https://placehold.co/1920x1080/4a2c2a/FFFFFF?text=Coffee');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-.header-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-.header-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-}
-.header-content h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-}
-.header-content p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-}
-
-/* Nút kêu gọi hành động (CTA) */
-.cta-button, .submit-button {
-    background-color: #967d68;
-    color: white;
-    padding: 0.75rem 2rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-}
-.cta-button:hover {
-    background-color: #7a5b4c;
-}
-.submit-button {
-    background-color: #4a2c2a;
-    border: none;
-}
-.submit-button:hover {
-    background-color: #3b2321;
-}
-
-/* Kiểu cho các phần chính */
-.section {
-    padding: 4rem 1rem;
-}
-.section h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #4a2c2a;
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-.grid-container {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(1, 1fr);
-}
-@media (min-width: 640px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (min-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Kiểu cho thẻ sản phẩm và blog */
-.card {
-    background-color: white;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-.card:hover {
-    transform: translateY(-5px);
-}
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-.card-content {
-    padding: 1.5rem;
-}
-.card-content h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #4a2c2a;
-    margin-bottom: 0.5rem;
-}
-.card-content p {
-    font-size: 1rem;
-    color: #666;
-}
-
-/* Kiểu cho form liên hệ */
-.contact-form {
-    background-color: white;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    max-width: 40rem;
-    margin: 0 auto;
-}
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    border: 1px solid #ccc;
-    margin-bottom: 1rem;
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #967d68;
-    box-shadow: 0 0 0 2px rgba(150, 125, 104, 0.2);
-}
-
-/* Kiểu cho Footer */
-.footer {
-    background-color: #4a2c2a;
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-}
-.footer p {
-    margin: 0;
-    font-size: 1rem;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f7f3e9;
+  overflow-x: hidden; /* quan trọng để tránh lệch */
+}
+
+/* ====== Container ====== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ====== Header ====== */
+nav {
+  background-color: #4a2c2a;
+  color: white;
+  padding: 1rem 0;
+}
+
+nav a {
+  color: white;
+  margin-right: 1.5rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #967d68;
+}
+
+/* ====== Hero ====== */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  background-color: #4a2c2a;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* ====== Buttons ====== */
+.btn-primary {
+  background-color: #fff;
+  color: #4a2c2a;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #e0d6cd;
+}
+
+/* ====== Sections ====== */
+section {
+  padding: 5rem 1rem;
+}
+
+/* ====== Footer ====== */
+footer {
+  background-color: #4a2c2a;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
 }
