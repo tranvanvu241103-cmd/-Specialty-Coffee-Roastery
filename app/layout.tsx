@@ -1,4 +1,3 @@
-// app/layout.tsx
 import "./globals.css";
 import Script from "next/script";
 
@@ -12,13 +11,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head />
       <body>
-        {/* Nội dung trang con (page.tsx) sẽ được render ở đây */}
-        {children}
+        <div className="container">
+          {children}
+        </div>
 
-        {/* Gắn script.js từ thư mục public/ */}
+        {/* Script từ public */}
         <Script src="/script.js" strategy="afterInteractive" />
       </body>
     </html>
   );
 }
-
